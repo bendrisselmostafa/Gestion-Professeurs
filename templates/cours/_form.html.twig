@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+    <div class="jumbotron" >
+<form>
+    <fieldset>
+
+        <table width="40%">
+
+            <tr>
+                <td>INTITULE</td>
+                <td>
+                    <label>{{ form_widget(form.intitule, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}</label>
+                </td>
+            </tr>
+
+        </table>
+        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+
+    </fieldset>
+    {{ form_rest(form) }}
+</form>
+</div>
+{{ form_end(form) }}
+
+
+
+
+

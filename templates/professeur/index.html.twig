@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}Professeur {% endblock %}
+
+{% block body %}
+    <h1>Liste de Professeurs : </h1>
+    <table class="table table-hover" border="1">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Cin</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date_recrutement</th>
+                <th scope="col">Afficher</th>
+                <th scope="col">Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for professeur in professeurs %}
+            <tr class="table-active">
+                <td>{{ professeur.id }}</td>
+                <td>{{ professeur.nom }}</td>
+                <td>{{ professeur.prenom }}</td>
+                <td>{{ professeur.cin }}</td>
+                <td>{{ professeur.adresse }}</td>
+                <td>{{ professeur.telephone }}</td>
+                <td>{{ professeur.email }}</td>
+                <td>{{ professeur.dateRecrutement ? professeur.dateRecrutement|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('professeur_show', {'id': professeur.id}) }}">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('professeur_edit', {'id': professeur.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('professeur_new') }}">Ajouter</a>
+{% endblock %}

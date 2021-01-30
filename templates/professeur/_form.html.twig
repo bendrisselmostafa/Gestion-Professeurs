@@ -1,0 +1,103 @@
+
+{{ form_start(form) }}
+<div class="jumbotron" >
+<form>
+    <fieldset>
+
+        <table width="40%">
+
+        <tr>
+                <td>NOM </td>
+                <td>
+                    <label>{{ form_widget(form.nom, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}</label>
+                </td>
+        </tr>
+        <tr>
+            <td>PRENOM </td>
+            <td>
+                <label for="exampleTextarea">
+                    {{ form_widget(form.prenom, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+
+        </tr>
+        <tr>
+            <td>CIN</td>
+            <td>
+                <label for="exampleTextarea">
+                    {{ form_widget(form.cin, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>ADRESSE</td>
+            <td>
+                <label for="exampleTextarea">
+                    {{ form_widget(form.adresse, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>TELPHONE </td>
+            <td>
+                <label for="exampleTextarea">
+                    {{ form_widget(form.telephone, {'id':"inputDefault",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>EMAIL </td>
+            <td>
+                <label for="exampleInputEmail1">
+                    {{ form_widget(form.email, {'id':"exampleInputEmail1",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>DATE RECRUTEMENT            </td>
+            <td>
+                <label for="exampleTextarea">
+                    {{ form_widget(form.date_recrutement) }}
+                </label>
+            </td>
+        </tr>
+
+        <tr>
+            <td>DEPARTEMENT</td>
+            <td>
+                <label for="exampleSelect1">
+                    {{ form_widget(form.departement, {'id':"exampleSelect1",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>COURS</td>
+            <td>
+                <label for="exampleSelect2">
+                    {{ form_widget(form.cours, {'id':"exampleSelect2",'attr': {'class': 'form-control'}}) }}
+                </label>
+            </td>
+        </tr>
+
+</table>
+        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+
+</fieldset>
+    {{ form_rest(form) }}
+</form>
+</div>
+{{ form_end(form) }}
+
+
+
+
+

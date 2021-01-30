@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+    <h1>Cours</h1>
+
+    <table class="table table-hover" border="1">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Intitule</th>
+                <th scope="col">Afficher</th>
+                <th scope="col">Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cour in cours %}
+            <tr class="table-active">
+                <td>{{ cour.id }}</td>
+                <td>{{ cour.intitule }}</td>
+                <td>
+                    <a href="{{ path('cours_show', {'id': cour.id}) }}">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('cours_edit', {'id': cour.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cours_new') }}">Ajouter</a>
+{% endblock %}

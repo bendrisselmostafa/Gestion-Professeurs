@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de departement {% endblock %}
+
+{% block body %}
+    <h1>Liste de departement</h1>
+
+    <table class="table table-hover" border="1">
+        <thead>
+            <tr >
+                <th scope="col">Id</th>
+                <th scope="col">Nom_depart</th>
+                <th scope="col">Afficher</th>
+                <th scope="col">Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr class="table-active">
+                <td>{{ departement.id }}</td>
+                <td>{{ departement.nomDepart }}</td>
+                <td>
+                    <a href="{{ path('departement_show', {'id': departement.id}) }}">Afficher</a>
+                </td>
+                <td>
+                    <a href="{{ path('departement_edit', {'id': departement.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('departement_new') }}">Ajouter</a>
+{% endblock %}
